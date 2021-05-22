@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>jdkagent</artifactId>
+    <groupId>org.jdkstack</groupId>
+    <version>11.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>jdkagent-core</artifactId>
+  <dependencies>
+    <dependency>
+      <groupId>org.jdkstack</groupId>
+      <artifactId>jdkagent-api</artifactId>
+      <version>11.0.1-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Can-Retransform-Classes>true</Can-Retransform-Classes>
+              <Premain-Class>org.jdkstack.jdkagent.core.JdkAgent</Premain-Class>
+            </manifestEntries>
+          </archive>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+    </plugins>
+  </build>
+</project>
